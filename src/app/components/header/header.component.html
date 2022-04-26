@@ -1,0 +1,29 @@
+<header>
+	<div class="header">
+		<div class="navigation">
+			<a [routerLink]="['/main']">
+				<img src="/assets/ecorus.svg"/>
+			</a>
+			<nav>
+				<a [routerLink]="['/main']" class="main">Главная</a>
+				<a [routerLink]="['/collection_points']">Пункты сбора</a>
+				<a [routerLink]="['/eco_market']">ЭкоМаркет</a>
+				<a [routerLink]="['/']">О сервисе</a>
+			</nav>
+		</div>
+
+		<div class="additional-information">
+			<button  class="city">
+				<img src="/assets/сity.svg"/>
+				<span>Казань</span>
+			</button>
+			<button class="sign-in" >
+				<img src="/assets/signIn.svg"/>
+				<span>Войти</span>
+			</button>
+			<button class="menu-burger-btn" onClick={onMenuBurger}>
+				<img src="/assets/menu-burger.svg"/>
+			</button>
+		</div>
+	</div>
+</header>
