@@ -1,4 +1,45 @@
 @import '~swiper/swiper.min.css'
 @import '~swiper/modules/navigation/navigation.min.css'
 
+.swiper-content-wrapper
+	width: 1200px
+	position: relative
+	margin: 40px auto 0px
 
+.swiper-button-next
+	width: 44px
+	height: 44px
+	border-radius: 100%
+	box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
+
+	background: #FFFFFF url(../../../assets/svg-icons/rigth-arrow-swiper.svg) no-repeat 50%
+	display: flex
+	align-items: center
+	justify-content: center
+	right: -22px
+	z-index: 2
+
+
+.swiper-button-next::after
+	display: none
+
+
+.swiper-button-prev
+	width: 44px
+	height: 44px
+
+	border-radius: 100%
+	box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
+
+	background: #FFFFFF url(../../../assets/svg-icons/left-arrow-swiper.svg) no-repeat 50%
+
+	display: flex
+	align-items: center
+	justify-content: center
+
+	left: -22px
+	z-index: 2
+
+
+.swiper-button-prev::after
+	display: none
