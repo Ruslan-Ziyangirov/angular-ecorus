@@ -6,24 +6,29 @@ SwiperCore.use([Navigation]);
 @Component({
 	selector: 'app-swiper',
 	templateUrl: './swiper.component.html',
-	styleUrls: ['./swiper.component.sass']
+	styleUrls: ['./swiper.component.sass'],
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	encapsulation: ViewEncapsulation.None
 })
 export class SwiperComponent implements OnInit {
-
-
 	config: SwiperOptions = {
-		slidesPerView: 3,
-		spaceBetween: 100,
+		slidesPerView: 1,
+		spaceBetween: 50,
 		navigation: true,
-		loop:true,
-		autoplay:true,
-		speed: 500
-		}
-		constructor() { }
-
-		ngOnInit(): void {
-		}
+		loop: true,
+		autoplay: true,
 	};
+	onSwiper([swiper]:any) {
+		console.log(swiper);
+	}
+	onSlideChange() {
+		console.log('slide change');
+	}
+	constructor() { }
+
+	ngOnInit(): void {
+	}
+};
 
 
 

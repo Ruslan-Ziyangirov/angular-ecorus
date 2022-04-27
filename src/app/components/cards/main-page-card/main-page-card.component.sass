@@ -11,25 +11,26 @@ h2
 	margin: 0
 
 .container
-	width: 100%
-	max-height: 250px
+	width: 588px
 
 .wrapperCard
-	margin: 0.4em
-	height: 100%
 	border: 1px solid rgba(18, 34, 88, 0.12)
 	border-radius: 18px
 	display: flex
+	align-items: center
 
 .text
 	margin-bottom: 0
-	padding: 2em 2em
+	padding: 40px 0px 40px 40px
 	p
-		font-size: calc(12px + 10 * (100vw / 3000))
+		font-size: 16px
+		line-height: 24px
+		color: rgba(0, 11, 38, 0.56)
+		margin-top: 14px
+		margin-bottom: 46px
 
 
 .buttonWrapper
-	bottom: 0 !important
 	button
 		justify-content: center
 		cursor: pointer
@@ -40,9 +41,10 @@ h2
 		width: 40px
 		height: 40px
 		background-position: center !important
-		background: rgba(62, 80, 114, 0.08) url(../../../../assets/rigth-arrow.svg) no-repeat
+		background: rgba(62, 80, 114, 0.08) url(../../../../assets/svg-icons/rigth-arrow.svg) no-repeat
 
-
+	button:hover
+		background: rgba(182, 193, 214, 0.08) url(../../../../assets/svg-icons/rigth-arrow.svg) no-repeat
 
 .wrapperImage
 	display: flex
