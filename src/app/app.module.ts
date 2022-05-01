@@ -10,6 +10,11 @@ import { SwiperComponent } from './components/swiper/swiper.component';
 import { SwiperBannerCardComponent } from './components/cards/swiper-banner-card/swiper-banner-card.component';
 import { SwiperModule } from 'swiper/angular';
 import { MainPageCardComponent } from './components/cards/main-page-card/main-page-card.component';
+import { EcomarketComponent } from './pages/ecomarket/ecomarket.component';
+import { FiltersComponent } from './components/ui/buttons/filters/filters.component';
+import { CheckboxesComponent } from './components/ui/checkboxes/checkboxes.component';
+import { FilterCheckboxesComponent } from './components/filter-checkboxes/filter-checkboxes.component';
+import { ProductCardComponent } from './components/cards/product-card/product-card.component';
 
 @NgModule({
 	declarations: [
@@ -19,7 +24,12 @@ import { MainPageCardComponent } from './components/cards/main-page-card/main-pa
   FooterComponent,
   SwiperComponent,
   SwiperBannerCardComponent,
-  MainPageCardComponent
+  MainPageCardComponent,
+  EcomarketComponent,
+  FiltersComponent,
+  CheckboxesComponent,
+  FilterCheckboxesComponent,
+  ProductCardComponent
 	],
 	imports: [
 		BrowserModule,
