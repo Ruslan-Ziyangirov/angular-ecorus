@@ -1,6 +1,8 @@
 @import '~swiper/swiper.min.css'
 @import '~swiper/modules/navigation/navigation.min.css'
 
+$arrow-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
+
 .swiper-content-wrapper
 	position: relative
 	max-width: 1200px
@@ -17,7 +19,7 @@
 	width: 44px
 	height: 44px
 	border-radius: 100%
-	box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
+	box-shadow: $arrow-shadow
 
 	background: #FFFFFF url(../../../assets/svg-icons/rigth-arrow-swiper.svg) no-repeat 50%
 	display: flex
@@ -36,7 +38,7 @@
 	height: 44px
 
 	border-radius: 100%
-	box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
+	box-shadow: $arrow-shadow
 
 	background: #FFFFFF url(../../../assets/svg-icons/left-arrow-swiper.svg) no-repeat 50%
 
@@ -67,7 +69,12 @@
 		max-width: 750px
 		width: 100%
 
-@media screen and (max-width: 375px)
+@media screen and (max-width: 730px)
+	.swiper-content-wrapper
+		max-width: 550px
+		width: 100%
+
+@media screen and (max-width: 500px)
 	.swiper-content-wrapper
 		width: 100%
 		margin-top: 0px
@@ -78,3 +85,6 @@
 
 		.swiper-button-prev
 			display: none
+
+@media screen and (max-width: 375px)
+

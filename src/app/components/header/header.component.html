@@ -6,8 +6,8 @@
 			</a>
 			<nav>
 				<a [routerLink]="['/']" class="main">Главная</a>
-				<a [routerLink]="['/collection_points']">Пункты сбора</a>
-				<a [routerLink]="['/eco_market']">ЭкоМаркет</a>
+				<a [routerLink]="['/collectionpoints']">Пункты сбора</a>
+				<a [routerLink]="['/ecomarket']">ЭкоМаркет</a>
 				<a [routerLink]="['/']">О сервисе</a>
 			</nav>
 		</div>
@@ -17,7 +17,7 @@
 				<img src='/assets/svg-icons/сity.svg'/>
 				<span>Казань</span>
 			</button>
-			<button class="sign-in" >
+			<button class="sign-in" (click)='openLoginDialog()'>
 				<img src='/assets/svg-icons/signIn.svg'/>
 				<span>Войти</span>
 			</button>

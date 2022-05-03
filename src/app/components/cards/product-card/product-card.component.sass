@@ -1,6 +1,7 @@
 $font-stack: Inter, sans-serif
 $primary-color: #00040a
 $secondary-color: rgba(53, 62, 91, 0.64)
+$arrow-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
 
 h1, a, button, p, input, span, h4
 	font-family: $font-stack
@@ -37,7 +38,7 @@ h1, a, button, p, input, span, h4
 	border-radius: 10px
 	margin-top: 24px
 	margin-left: 24px
-	box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
+	box-shadow: $arrow-shadow
 	z-index: 2
 	position: absolute
 
@@ -101,14 +102,15 @@ h1, a, button, p, input, span, h4
 
 
 
-@media screen and (max-width: 375px)
+@media screen and (max-width: 500px)
 	.product
-		display: inline-block
+		display: block
 		flex-direction: column
 		border-radius: 24px
 		position: relative
-		margin-bottom: 48px
+		margin: 0 auto 48px
 		width: 343px
+
 
 	.product:first-child
 		margin-top: 20px
@@ -131,45 +133,6 @@ h1, a, button, p, input, span, h4
 		margin-right: 0px
 
 
-	.producer
-		background: white
-		border-radius: 10px
-		margin-top: 24px
-		margin-left: 24px
-		box-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
-		z-index: 2
-		position: absolute
-
-		p
-			font-style: normal
-			font-weight: 400
-			font-size: 14px
-			color: rgba(0, 11, 38, 0.72)
-			padding: 6px 10px
-			line-height: 18px
-
-
-	.balance
-		display: flex
-		align-items: center
-		margin-top: 16px
-
-		p
-			padding-bottom: 0px
-
-		.count
-			color: #000000
-			font-weight: 600
-			margin-left: 8px
-
-		.logo-balance
-			width: 24px
-			height: 24px
-
-	.gender
-		padding: 0px
-		font-weight: 500
-
 	.img-product
 		width: 343px
 		height: 270px
@@ -179,3 +142,4 @@ h1, a, button, p, input, span, h4
 		background: transparent
 		border: 0px
 		padding: 0px
+
