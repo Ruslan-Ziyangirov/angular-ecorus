@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { DialogService } from '@services/dialog.service';
+import { LoginFormComponent } from '@components/forms/login-form/login-form.component';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +8,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./header.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+	constructor(private dialog: DialogService) {
+	}
 
-  ngOnInit(): void {
-  }
+	openLoginDialog() {
+		this.dialog.openDialog(LoginFormComponent,{title: "Вход"})
+	}
 
 }

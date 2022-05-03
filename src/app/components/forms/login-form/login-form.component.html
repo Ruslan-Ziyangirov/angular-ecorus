@@ -1,0 +1,37 @@
+<form class='form_modal'
+	[formGroup]='formGroup'>
+	<input
+		formControlName='phone'
+		class='formInput'
+		[class.errorFormInput]='isControlValid("phone")'
+		placeholder='Телефон'>
+	<ng-container *ngIf='validateControl("phone","required")'>
+		<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
+	</ng-container>
+	<ng-container *ngIf='validateControl("phone","maxlength")'>
+		<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
+	</ng-container>
+	<input
+		formControlName='password'
+		class='formInput'
+		[class.errorFormInput]='isControlValid("password")'
+		placeholder='Пароль'
+		type='password'>
+	<ng-container *ngIf='validateControl("password","required")'>
+		<app-form-error-message validationMessage='Это поле обязательно'></app-form-error-message>
+	</ng-container>
+	<ng-container *ngIf='validateControl("password","maxlength")'>
+		<app-form-error-message validationMessage='Максимальная длина превышена'></app-form-error-message>
+	</ng-container>
+	<app-button-modal title='Войти' background='#07C88E' color='white' type='submit'></app-button-modal>
+	<div class='modal__underLinks'>
+		<button>
+			Войти с помощью смс
+		</button>
+		<button>
+			Регистрация
+		</button>
+	</div>
+	<app-button-modal title='Вход для партнера' background='rgba(62, 80, 114, 0.08)' color='rgba(0, 11, 38, 0.8)'
+	                  type='submit'></app-button-modal>
+</form>

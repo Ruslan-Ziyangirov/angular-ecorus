@@ -40,10 +40,11 @@ h5
 	margin-bottom: 16px
 
 .filter-wrapper
+	width: 282px
 	border: 2px solid rgba(62, 80, 114, 0.16)
 	border-radius: 16px
 	margin-right: 47px
-	width: 282px
+	position: sticky
 	height: 650px
 
 .block-of-filter
@@ -63,51 +64,28 @@ h5
 		max-width: 850px
 		width: 100%
 
-
 @media screen and (max-width: 850px)
 	.body-for-ecomarket-page
 		max-width: 750px
 		width: 100%
 
-	.table-products
-		display: flex
-		flex-direction: row
-		flex-wrap: wrap
-		justify-content: space-between
-		max-width: 570px
+@media screen and (max-width: 730px)
+	.body-for-ecomarket-page
+		max-width: 550px
 		width: 100%
 
-	.filter-wrapper
-		width: 235px
-		border: 2px solid rgba(62, 80, 114, 0.16)
-		border-radius: 16px
-		margin-right: 32px
-		position: sticky
-		height: 620px
+
+
+@media screen and (max-width: 500px)
+	.body-for-ecomarket-page
+		max-width: 400px
+		width: 100%
 
 	.header-and-button-filter
-		display: flex
-		align-items: center
-		justify-content: space-between
-		width: 100%
-
-		h1
-			margin-right: 24px
+		display: block
 
 	.filter-wrapper
-		display: block
-		margin-right: 24px
-
-
-	.block-of-filter
-		margin-top: 24px
-		margin-left: 16px
-		margin-right: 16px
-
-	.block-of-filter:last-child
-		margin-bottom: 24px
-
-
+		display: none
 
 @media screen and (max-width: 375px)
 	p
@@ -135,7 +113,9 @@ h5
 		flex-direction: row
 		flex-wrap: wrap
 		justify-content: space-between
-		width: 343px
+		max-width: 343px
+		width: 100%
+		margin: 0 auto
 
 	.filter-and-table
 		display: flex
@@ -157,3 +137,14 @@ h5
 
 	.block-of-filter:last-child
 		margin-bottom: 24px
+
+	.img-product
+		max-width: 343px
+		width: 100%
+		height: 270px
+		padding: 0px
+
+	.img-button
+		background: transparent
+		border: 0px
+		padding: 0px

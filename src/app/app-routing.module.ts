@@ -7,22 +7,18 @@ const routes: Routes = [
 	{
 		path: '',
 		component: HomeComponent,
-		pathMatch:'full'
 	},
 	{
-		path:'collection_points',
+		path:'collectionpoints',
 		component: HomeComponent,
-		pathMatch:'full'
 	},
 	{
-		path:'eco_market',
+		path:'ecomarket',
 		component: EcomarketComponent,
-		pathMatch:'full'
 	},
 	{
-		path:'about_service',
+		path:'aboutservice',
 		component: HomeComponent,
-		pathMatch:'full'
 	}
 
 ];
