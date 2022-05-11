@@ -14,7 +14,11 @@
 			</div>
 			<div class="table-products">
 				<div *ngFor="let i of products">
-					<app-product-card title='{{i.title}}' producer='{{i.producer}}' img='{{i.img}}' price='{{i.price}}'>
+					<app-product-card title='{{i.title}}'
+					                  producer='{{i.producer}}'
+					                  img='{{i.img}}'
+					                  price='{{i.price}}'
+					                  (click)='openQrCodeDialog()'>
 					</app-product-card>
 				</div>
 			</div>

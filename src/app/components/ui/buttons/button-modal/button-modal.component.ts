@@ -11,7 +11,7 @@ export class ButtonModalComponent  {
 	@Input() title: string;
 	@Input() color: string;
 	@Input() background: string;
-	@Input() onClick?: any;
+	@Input() submitFunc?: any
 	@Input() type?:any
 
 	constructor() {

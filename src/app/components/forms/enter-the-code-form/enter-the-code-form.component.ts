@@ -1,27 +1,30 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogService } from '@services/dialog.service';
+import { SigninFormComponent } from '@components/forms/signin-form/signin-form.component';
+import { PartnersLoginFormComponent } from '@components/forms/partners-login-form/partners-login-form.component';
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.sass'],
+  selector: 'app-enter-the-code-form',
+  templateUrl: './enter-the-code-form.component.html',
+  styleUrls: ['./enter-the-code-form.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginFormComponent {
+export class EnterTheCodeFormComponent {
 
+	isSubmitted: boolean = false;
 	formGroup: FormGroup;
+	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
 	constructor(
 		public dialog: DialogService,
 		private formBuilder: FormBuilder
 	) {
 		this.formGroup = this.formBuilder.group({
-			phone: ['', [
+			code: ['', [
 				Validators.required,
-				Validators.maxLength(11)]],
-			password: ['', [Validators.required,
-				Validators.maxLength(16)]]
+				Validators.maxLength(11)]]
+
 		})
 	}
 
@@ -45,5 +48,12 @@ export class LoginFormComponent {
 		}
 	}
 
+	openLoginDialog() {
+		this.dialog.openDialog(SigninFormComponent,{title: "Вход"})
+	}
+
+	openLoginForPartnersDialog() {
+		this.dialog.openDialog(PartnersLoginFormComponent,{title: "Вход"})
+	}
 
 }

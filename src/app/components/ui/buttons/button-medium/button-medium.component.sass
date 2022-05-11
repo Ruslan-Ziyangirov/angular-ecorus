@@ -1,7 +1,9 @@
+@import "../../../../styles/mixins.sass"
+
 .btn-medium
 	display: none
 
-@media screen and (max-width: 500px)
+@include screenMax500
 	.btn-medium
 		display: block
 		width: 100%

@@ -1,3 +1,5 @@
+@import "../../../styles/mixins.sass"
+
 .title
 	font-size: 28px
 .modal__container
@@ -32,6 +34,7 @@
 
 			h2
 				margin: 0
+				font-size: 28px
 
 		.modal__closeButton
 			background: transparent
@@ -43,3 +46,12 @@
 			img
 				width: 24px
 				height: 24px
+
+@include screenMax850
+
+	.modal_wrapper
+		background: white
+		border-radius: 0px
+		max-width: 100%
+		height: 100%
+
