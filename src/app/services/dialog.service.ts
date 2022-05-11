@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ComponentType } from '@angular/cdk/overlay';
 import { Dialog, DialogConfig, DialogRef } from '@angular/cdk-experimental/dialog';
 import { ModalContainerComponent } from '@components/modals/modal-container/modal-container.component';
-import { LoginFormComponent } from '@components/forms/login-form/login-form.component';
+import { SigninFormComponent } from '@components/forms/signin-form/signin-form.component';
 
 
 interface DialogData{

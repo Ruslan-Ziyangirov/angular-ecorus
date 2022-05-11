@@ -1,3 +1,5 @@
+@import "../../../../styles/mixins.sass"
+
 .filters
 	display: flex
 	flex-wrap: nowrap
@@ -32,7 +34,7 @@
 .btn-for-filter:last-child
 	margin-right: 0px
 
-@media screen and (max-width: 730px)
+@include screenMax730
 	.filters
 		max-width: 550px
 		width: 100%
@@ -40,7 +42,7 @@
 	.btn-for-filter
 		padding: 8px 16px
 
-@media screen and (max-width: 500px)
+@include screenMax500
 	.filters
 		display: none
 

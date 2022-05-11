@@ -1,9 +1,8 @@
-$font-stack: Inter, sans-serif
+@import "../../styles/mixins.sass"
+
 $primary-color: #00040a
 $secondary-color: rgba(53, 62, 91, 0.64)
 
-a, span, p
-	font-family: $font-stack
 
 header
 	border-bottom: 1px solid #E0E0E0
@@ -95,18 +94,18 @@ span
 .menu-burger-btn
 	display: none
 
-@media screen and (max-width: 1250px)
+@include screenMax1250
 	.header
 		max-width: 1100px
 		width: 100%
 
-@media screen and (max-width: 1100px)
+@include screenMax1100
 	.header
 		max-width: 850px
 		width: 100%
 
 
-@media screen and (max-width: 850px)
+@include screenMax850
 
 	.header
 		max-width: 750px
@@ -187,19 +186,19 @@ span
 		height: 22px
 		margin-left: 16px
 
-@media screen and (max-width: 730px)
+@include screenMax730
 	.header
 		max-width: 550px
 		width: 100%
 
 
-@media screen and (max-width: 500px)
+@include screenMax500
 	.header
 		max-width: 400px
 		width: 100%
 
 
-@media screen and (max-width: 375px)
+@include screenMax375
 
 	.header
 		max-width: 343px

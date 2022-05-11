@@ -1,5 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { DataItems } from '../../stores/products-store';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { DataItems } from '../../mocks/products-mock';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DialogService } from '@services/dialog.service';
+import { PartnersLoginFormComponent } from '@components/forms/partners-login-form/partners-login-form.component';
+import { QrCodeComponent } from '@components/modals/qr-code/qr-code.component';
 
 @Component({
   selector: 'app-ecomarket',
@@ -7,15 +11,30 @@ import { DataItems } from '../../stores/products-store';
   styleUrls: ['./ecomarket.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EcomarketComponent implements OnInit {
+export class EcomarketComponent {
 
+	formGroup: FormGroup;
+	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 	@Input() products: Array<any>;
 
-  constructor() {
-	  this.products = DataItems
-  }
+	constructor(
+		public dialog: DialogService,
+		private formBuilder: FormBuilder
 
-  ngOnInit(): void {
-  }
+	) {
+		this.formGroup = this.formBuilder.group({
+			email: ['', [
+				Validators.required,
+				Validators.maxLength(64),
+				Validators.email]],
+			password: ['', [Validators.required,
+				Validators.maxLength(16)]]
+		});
+		this.products = DataItems
 
+	}
+
+	openQrCodeDialog() {
+		this.dialog.openDialog(QrCodeComponent,{title: "QR-код на покупку создан"})
+	}
 }

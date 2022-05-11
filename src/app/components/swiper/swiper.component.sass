@@ -1,5 +1,4 @@
-@import '~swiper/swiper.min.css'
-@import '~swiper/modules/navigation/navigation.min.css'
+@import "../../styles/mixins.sass"
 
 $arrow-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
 
@@ -53,28 +52,28 @@ $arrow-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
 .swiper-button-prev::after
 	display: none
 
-@media screen and (max-width: 1250px)
+@include screenMax1250
 	.swiper-content-wrapper
 		max-width: 1100px
 		width: 100%
 
-@media screen and (max-width: 1100px)
+@include screenMax1100
 	.swiper-content-wrapper
 		max-width: 850px
 		width: 100%
 
 
-@media screen and (max-width: 850px)
+@include screenMax850
 	.swiper-content-wrapper
 		max-width: 750px
 		width: 100%
 
-@media screen and (max-width: 730px)
+@include screenMax730
 	.swiper-content-wrapper
 		max-width: 550px
 		width: 100%
 
-@media screen and (max-width: 500px)
+@include screenMax500
 	.swiper-content-wrapper
 		width: 100%
 		margin-top: 0px
@@ -86,5 +85,5 @@ $arrow-shadow: 0px 4px 24px rgba(0, 11, 38, 0.12)
 		.swiper-button-prev
 			display: none
 
-@media screen and (max-width: 375px)
+@include screenMax375
 
