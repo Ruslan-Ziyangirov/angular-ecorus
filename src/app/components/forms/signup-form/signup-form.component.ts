@@ -4,6 +4,7 @@ import { DialogService } from '@services/dialog.service';
 import { PartnersLoginFormComponent } from '@components/forms/partners-login-form/partners-login-form.component';
 import { SigninFormComponent } from '@components/forms/signin-form/signin-form.component';
 import { AuthorizationService } from '@services/authorization.service';
+import { ToastService } from '@services/toast.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -20,7 +21,8 @@ export class SignupFormComponent{
 	constructor(
 		public dialog: DialogService,
 		private formBuilder: FormBuilder,
-		private authService: AuthorizationService
+		private authService: AuthorizationService,
+		public toasterService: ToastService
 	) {
 		this.formGroup = this.formBuilder.group({
 			firstname:['',Validators.required,
@@ -57,13 +59,19 @@ export class SignupFormComponent{
 		this.dialog.openDialog(PartnersLoginFormComponent,{title: "Вход"})
 	}
 
+	toaster(message:string){
+		this.toasterService.success(message)
+	}
+
 	signUp() {
 		return () => {
 			this.authService.registration(this.formGroup.value).subscribe(res => {
 				console.log(res);
 				this.dialog.openDialog(SigninFormComponent, {title:"Вход"});
+				this.toaster("Вы внесены в нашу базу данных!");
 			}, err => {
 				console.log(err);
+				this.toaster("Наверное наш сервер хромает...");
 			})
 		}
 	}

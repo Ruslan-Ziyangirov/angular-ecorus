@@ -10,11 +10,12 @@ export class ToastService {
 	) {
 	}
 
-	success(message: string, config?: ToastrConfig): void {
-		this.toastService.success(message, 'У вас все получилось!', config);
+	success(message: string): void {
+		console.log("тостер ра-бо-та-ть")
+		this.toastService.success(message, 'Успешно!');
 	}
 
-	error(message: string, config?: ToastrConfig): void {
-		this.toastService.error(message, 'Мне кажется, произошло ошибка...', config);
+	error(message: string): void {
+		this.toastService.error(message, 'Ошибка!');
 	}
 }

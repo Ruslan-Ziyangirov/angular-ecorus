@@ -35,6 +35,9 @@ import { ErrorInterceptorService } from '@services/error-interceptor.service';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorService } from '@services/auth-interceptor.service';
 import { QrCodeComponent } from './components/modals/qr-code/qr-code.component';
+import { BottomSheetComponent } from './components/bottom-sheets/bottom-sheet/bottom-sheet.component';
+import { FiltersBottomSheetComponent } from './components/bottom-sheets/filters-bottom-sheet/filters-bottom-sheet.component';
+import { ButtonSmallComponent } from './components/ui/buttons/button-small/button-small.component';
 
 
 @NgModule({
@@ -63,6 +66,9 @@ import { QrCodeComponent } from './components/modals/qr-code/qr-code.component';
 	  	EnterTheCodeFormComponent,
 	  	MenuBurgerComponent,
     QrCodeComponent,
+    BottomSheetComponent,
+    FiltersBottomSheetComponent,
+    ButtonSmallComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -75,8 +81,8 @@ import { QrCodeComponent } from './components/modals/qr-code/qr-code.component';
 		HttpClientModule,
 		ToastrModule.forRoot({
 			timeOut: 2500,
-			progressBar: true,
-			positionClass: 'toast-top-right'
+			positionClass: 'toast-top-right',
+			preventDuplicates: true,
 		}),
 	],
 	providers: [{
