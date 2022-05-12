@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogService } from '@services/dialog.service';
 import { PartnersLoginFormComponent } from '@components/forms/partners-login-form/partners-login-form.component';
 import { QrCodeComponent } from '@components/modals/qr-code/qr-code.component';
+import { FiltersBottomSheetComponent } from '@components/bottom-sheets/filters-bottom-sheet/filters-bottom-sheet.component';
+import { BottomSheetService } from '@services/bottom-sheet.service';
 
 @Component({
   selector: 'app-ecomarket',
@@ -13,23 +15,14 @@ import { QrCodeComponent } from '@components/modals/qr-code/qr-code.component';
 })
 export class EcomarketComponent {
 
-	formGroup: FormGroup;
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 	@Input() products: Array<any>;
 
 	constructor(
 		public dialog: DialogService,
-		private formBuilder: FormBuilder
-
+		private bottomSheetService: BottomSheetService
 	) {
-		this.formGroup = this.formBuilder.group({
-			email: ['', [
-				Validators.required,
-				Validators.maxLength(64),
-				Validators.email]],
-			password: ['', [Validators.required,
-				Validators.maxLength(16)]]
-		});
+
 		this.products = DataItems
 
 	}
@@ -37,4 +30,10 @@ export class EcomarketComponent {
 	openQrCodeDialog() {
 		this.dialog.openDialog(QrCodeComponent,{title: "QR-код на покупку создан"})
 	}
+
+	openBottomSheetFilters() {
+		this.bottomSheetService.openDialog(FiltersBottomSheetComponent)
+	}
+
+
 }

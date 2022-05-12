@@ -20,8 +20,8 @@ export class SigninFormComponent {
 	constructor(
 		public dialog: DialogService,
 		private formBuilder: FormBuilder,
-		private toast: ToastService,
-		private authService: AuthorizationService
+		private authService: AuthorizationService,
+		public toasterService: ToastService
 
 	) {
 		this.formGroup = this.formBuilder.group({
@@ -55,6 +55,10 @@ export class SigninFormComponent {
 		this.dialog.openDialog(SignupFormComponent,{title: "Регистрация"})
 	}
 
+	toaster(message:string){
+		this.toasterService.success(message)
+	}
+
 	login() {
 		const login = this.formGroup.value.login;
 		const password = this.formGroup.value.password;
@@ -63,8 +67,11 @@ export class SigninFormComponent {
 				this.authService.token = res.token;
 				console.log(this.authService.token);
 				console.log(res);
+				this.toaster("У вас все получилось!");
 			}, err => {
 				console.log(err);
+				this.toaster("Нашему серверу что-то плоховато...");
+
 			})
 		}
 	}
