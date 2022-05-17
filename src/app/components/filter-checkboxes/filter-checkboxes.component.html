@@ -1,4 +1,4 @@
-<aside class="">
+<aside class="aside-wrapper">
 	<div class="block-of-filter">
 		<h5>Пол</h5>
 		<div *ngFor="let i of allGenders">
@@ -22,3 +22,11 @@
 		</div>
 	</div>
 </aside>
+
+<div class='reset-filters'>
+	<app-button-medium type='button' title='Сбросить фильтры' background='rgba(62, 80, 114, 0.08)'
+	                   color='rgba(0, 11, 38, 0.8)'>
+	</app-button-medium>
+</div>
+
+
