@@ -2,8 +2,11 @@
 	<div class="body-for-ecomarket-page">
 		<div class="header-and-button-filter">
 			<h1>ЭкоМаркет</h1>
-			<app-button-medium type='button' title='Фильтры' background='rgba(62, 80, 114, 0.08)'
-			                   color='rgba(0, 11, 38, 0.8)' (click)='openBottomSheetFilters()'></app-button-medium>
+			<div class='mobile-filters'>
+				<app-button-medium type='button' title='Фильтры' background='rgba(62, 80, 114, 0.08)'
+				                   color='rgba(0, 11, 38, 0.8)' (click)='openBottomSheetFilters()'>
+				</app-button-medium>
+			</div>
 			<div class="button-filters">
 				<app-filters-btn></app-filters-btn>
 			</div>
