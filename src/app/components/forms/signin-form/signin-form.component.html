@@ -30,7 +30,7 @@
 			<app-form-error-message validationMessage='Длинна превышена!'></app-form-error-message>
 		</ng-container>
 
-		<app-button-modal title='Войти' background='#07C88E' color='white' type='submit' [submitFunc]='login()'></app-button-modal>
+		<app-button-large title='Войти' background='#07C88E' color='white' type='submit' [submitFunc]='login()'></app-button-large>
 
 		<div class='modal__underLinks'>
 			<button (click)='openLoginWithSMSDialog()'>
@@ -41,8 +41,8 @@
 			</button>
 		</div>
 
-		<app-button-modal title='Вход для партнера' background='rgba(62, 80, 114, 0.08)' color='rgba(0, 11, 38, 0.8)'
-		                  type='submit' (click)='openLoginForPartnersDialog()'></app-button-modal>
+		<app-button-large title='Вход для партнера' background='rgba(62, 80, 114, 0.08)' color='rgba(0, 11, 38, 0.8)'
+		                  type='submit' (click)='openLoginForPartnersDialog()'></app-button-large>
 	</form>
 </div>
 

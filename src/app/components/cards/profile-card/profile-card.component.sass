@@ -1,0 +1,75 @@
+@import "../../../styles/mixins.sass"
+
+.profile-card-wrapper
+	background: #FFFFFF
+	border: 1px solid rgba(62, 80, 114, 0.16)
+	border-radius: 20px
+
+	.information-profile-wrapper
+		width: 320px
+		padding: 32px
+
+		img
+			width: 128px
+			height: 128px
+			margin: 0 auto
+			display: block
+
+		.information-about-user
+			margin: 16px 0px
+			text-align: center
+
+			h3
+				font-weight: 600
+				font-size: 24px
+				line-height: 28px
+				margin: 16px 0px
+				color: rgba(0, 11, 38, 0.88)
+
+			h4
+				color: rgba(0, 11, 38, 0.72)
+				font-weight: 400
+				font-size: 16px
+				line-height: 20px
+				margin: 12px 0px
+
+			p
+				font-weight: 400
+				font-size: 16px
+				line-height: 20px
+				color: rgba(0, 11, 38, 0.72)
+				order: 1
+				margin: 12px 0px
+				padding: 0px
+
+@include screenMax1250
+	.information-profile-wrapper
+		max-width: 310px
+		width: 100%
+
+@include screenMax1100
+	.information-profile-wrapper
+		max-width: 260px
+		width: 100%
+		padding: 16px
+
+@include screenMax850
+	.profile-card-wrapper
+		display: block
+		max-width: 384px
+		width: 100%
+		margin: 0 auto
+
+		.information-profile-wrapper
+			max-width: 320px
+			width: 100%
+			padding: 0px
+			margin: 32px auto
+
+
+
+
+@media screen and (max-width: 375px)
+	.profile-card-wrapper
+		max-width: 343px
+		width: 100%

@@ -1,12 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-button-modal',
-  templateUrl: './button-modal.component.html',
-  styleUrls: ['./button-modal.component.sass'],
+  selector: 'app-button-large',
+  templateUrl: './button-large.component.html',
+  styleUrls: ['./button-large.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ButtonModalComponent  {
+export class ButtonLargeComponent {
 
 	@Input() title: string;
 	@Input() color: string;

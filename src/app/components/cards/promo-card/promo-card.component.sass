@@ -1,0 +1,124 @@
+@import "../../../styles/mixins.sass"
+
+.promocode-card-wrapper
+	justify-content: space-between
+	width: 100%
+	display: flex
+	margin-top: 24px
+
+	.cost-information-wrapper
+		display: flex
+
+	.cost-wrapper
+		border-radius: 12px
+		width: 180px
+		height: 110px
+		background: linear-gradient(149.1deg, #00D5C7 0%, #FFEE57 117.79%)
+		margin-right: 24px
+
+		h3
+			font-weight: 700
+			font-size: 32px
+			line-height: 40px
+			color: #FFFFFF
+			text-align: center
+
+	.promocode-information-wrapper
+		text-align: left
+		font-size: 14px
+		line-height: 18px
+
+		.date
+			margin-bottom: 16px
+
+		p
+			font-weight: 500
+			color: rgba(0, 11, 38, 0.4)
+			padding: 0px
+			margin-top: 0px
+			margin-bottom: 4px
+
+		h4
+			color: rgba(0, 11, 38, 0.88)
+			font-weight: 400
+			margin: 4px 0px 16px
+
+		h5
+			color: #07C88E
+			font-weight: 400
+			margin: 0px
+
+
+@include screenMax1250
+	.promocode-card-wrapper
+		max-width: 668px
+		width: 100%
+
+@include screenMax1100
+	.promocode-card-wrapper
+		max-width: 430px
+		width: 100%
+
+		.cost-wrapper
+			width: 120px
+			height: 110px
+			margin-right: 8px
+
+@include screenMax850
+	.promocode-card-wrapper
+		max-width: 750px
+		width: 100%
+
+		.cost-wrapper
+			width: 180px
+			height: 110px
+			margin-right: 24px
+
+@include screenMax730
+	.promocode-card-wrapper
+		max-width: 550px
+		width: 100%
+
+		.cost-wrapper
+			width: 150px
+			height: 110px
+			margin-right: 16px
+
+@include screenMax500
+	.promocode-card-wrapper
+		justify-content: space-between
+		width: 100%
+		margin-top: 24px
+
+		.cost-information-wrapper
+			display: block
+
+		.cost-wrapper
+			border-radius: 12px
+			width: 180px
+			height: 110px
+			background: linear-gradient(149.1deg, #00D5C7 0%, #FFEE57 117.79%)
+			margin-right: 0px
+			display: flex
+			align-items: center
+			margin-bottom: 24px
+
+			h3
+				margin: 0px auto
+
+		.promocode-information-wrapper
+			width: 230px
+
+
+@include screenMax375
+	.promocode-card-wrapper
+
+		.cost-wrapper
+			width: 160px
+
+			h3
+				margin: 0px auto
+
+		.promocode-information-wrapper
+			width: 220px
+
