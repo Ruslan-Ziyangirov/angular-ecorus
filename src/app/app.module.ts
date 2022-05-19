@@ -23,7 +23,7 @@ import { FormErrorMessageComponent } from '@components/ui/form-error-message/for
 import { DialogModule } from '@angular/cdk-experimental/dialog';
 import { DialogCloseDirective } from '@directives/dialog-close.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonModalComponent } from './components/ui/buttons/button-modal/button-modal.component';
+import { ButtonLargeComponent } from '@components/ui/buttons/button-large/button-large.component';
 import { PartnersLoginFormComponent } from './components/forms/partners-login-form/partners-login-form.component';
 import { SignupFormComponent } from './components/forms/signup-form/signup-form.component';
 import { SigninWithSmsFormComponent } from '@components/forms/signin-with-sms-form/signin-with-sms-form.component';
@@ -38,6 +38,10 @@ import { QrCodeComponent } from './components/modals/qr-code/qr-code.component';
 import { BottomSheetComponent } from './components/bottom-sheets/bottom-sheet/bottom-sheet.component';
 import { FiltersBottomSheetComponent } from './components/bottom-sheets/filters-bottom-sheet/filters-bottom-sheet.component';
 import { ButtonSmallComponent } from './components/ui/buttons/button-small/button-small.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileCardComponent } from './components/cards/profile-card/profile-card.component';
+import { PromoCardComponent } from './components/cards/promo-card/promo-card.component';
+import { HistoryCardComponent } from './components/cards/history-card/history-card.component';
 
 
 @NgModule({
@@ -59,7 +63,7 @@ import { ButtonSmallComponent } from './components/ui/buttons/button-small/butto
 		SigninFormComponent,
 		FormErrorMessageComponent,
 		DialogCloseDirective,
-	  	ButtonModalComponent,
+	  	ButtonLargeComponent,
 	  	PartnersLoginFormComponent,
 	  	SignupFormComponent,
 	  	SigninWithSmsFormComponent,
@@ -69,6 +73,10 @@ import { ButtonSmallComponent } from './components/ui/buttons/button-small/butto
     BottomSheetComponent,
     FiltersBottomSheetComponent,
     ButtonSmallComponent,
+    ProfileComponent,
+    ProfileCardComponent,
+    PromoCardComponent,
+    HistoryCardComponent,
 	],
 	imports: [
 		BrowserModule,

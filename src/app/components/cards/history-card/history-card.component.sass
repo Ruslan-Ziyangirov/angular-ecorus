@@ -1,0 +1,83 @@
+@import "../../../styles/mixins.sass"
+
+.history-card-wrapper
+	margin-top: 24px
+	max-width: 704px
+	padding: 32px
+	width: 100%
+	border: 1px solid #E0E0E0
+	border-radius: 20px
+	margin-bottom: 16px
+
+	.history-card-container
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+
+
+
+		.history-information-wrapper
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			text-align: left
+
+			.block-information
+				margin-bottom: 16px
+
+				p
+					font-weight: 500
+					font-size: 14px
+					margin: 0 0 4px
+					color: rgba(0, 11, 38, 0.4)
+
+				h5
+					color: rgba(0, 11, 38, 0.88)
+					font-weight: 400
+					font-size: 16px
+					margin: 0px
+
+			.block-information:last-child
+				margin-bottom: 0px
+
+		.cost-wrapper
+			display: flex
+			align-items: center
+
+			h4
+				color: #000000
+				font-weight: 600
+				font-size: 14px
+				margin-left: 8px
+
+
+@include screenMax1250
+	.history-card-wrapper
+		max-width: 604px
+		width: 100%
+
+@include screenMax1100
+	.history-card-wrapper
+		max-width: 430px
+		width: 100%
+
+@include screenMax850
+	.history-card-wrapper
+		max-width: 686px
+		width: 100%
+
+@include screenMax730
+	.history-card-wrapper
+		max-width: 486px
+		width: 100%
+
+@include screenMax500
+	.history-card-wrapper
+		max-width: 336px
+		width: 100%
+
+@include screenMax375
+	.history-card-wrapper
+		width: 279px
+
