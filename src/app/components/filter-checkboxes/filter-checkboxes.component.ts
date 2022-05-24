@@ -20,11 +20,13 @@ export class FilterCheckboxesComponent implements OnInit {
 			{name: "Женский", checked:false}
 		]
 		this.allTypes = [
+			{name: "Выбрать все", checked: false, value: "all"},
 			{name: "Одежда", checked: false},
 			{name: "Обувь", checked: false},
 			{name: "Аксессуары", checked: false}
 		]
 		this.allBrands = [
+			{name: "Выбрать все", checked: false, value: "all"},
 			{name: "H&M", checked: false},
 			{name: "P&B", checked: false},
 			{name: "Adidas", checked: false},
@@ -33,7 +35,23 @@ export class FilterCheckboxesComponent implements OnInit {
 		]
 	}
 
-  ngOnInit(): void {
-  }
+	  ngOnInit(): void {
+	  }
+
+
+	resetFilter() {
+		this.allGenders = this.allGenders.map((gender) => Object.assign({}, {
+			...gender,
+			checked: false
+		}));
+		this.allTypes = this.allTypes.map((type) => Object.assign({}, {
+			...type,
+			checked: false
+		}));
+		this.allBrands = this.allBrands.map((brand) => Object.assign({}, {
+			...brand,
+			checked: false
+		}));
+	}
 
 }

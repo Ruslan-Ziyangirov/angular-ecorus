@@ -31,4 +31,17 @@ export class AuthorizationService {
 	registration(signUpParams: SignUpParams): Observable<any> {
 		return this.http.post('account', signUpParams);
 	}
+
+	getProfile(): Observable<any> {
+		return this.http.get('profile');
+	}
+
+	get isAuthorized(): boolean {
+		return this.token !== null;
+	}
+
+
+	saveToStorage(res: any): void {
+		this.token = res.access_token;
+	}
 }

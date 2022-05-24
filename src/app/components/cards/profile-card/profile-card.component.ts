@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { ProfileService } from '@services/profile.service';
 
 @Component({
   selector: 'app-profile-card',
@@ -6,20 +7,18 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
   styleUrls: ['./profile-card.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProfileCardComponent implements OnInit {
+export class ProfileCardComponent  {
 
 	@Input() name:string;
 	@Input() telephone:string;
 	@Input() email:string;
 	@Input() image:string;
 
-  	constructor() {
+  	constructor(private profile: ProfileService) {
 		  this.name ="";
 		  this.telephone="";
 		  this.email="";
 		  this.image="";
 	}
-
-	ngOnInit(): void {}
 
 }

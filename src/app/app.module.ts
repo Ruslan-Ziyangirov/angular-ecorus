@@ -42,6 +42,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfileCardComponent } from './components/cards/profile-card/profile-card.component';
 import { PromoCardComponent } from './components/cards/promo-card/promo-card.component';
 import { HistoryCardComponent } from './components/cards/history-card/history-card.component';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 
 @NgModule({
@@ -86,6 +87,7 @@ import { HistoryCardComponent } from './components/cards/history-card/history-ca
 		PortalModule,
 		DialogModule,
 		BrowserAnimationsModule,
+		MatBottomSheetModule,
 		HttpClientModule,
 		ToastrModule.forRoot({
 			timeOut: 2500,

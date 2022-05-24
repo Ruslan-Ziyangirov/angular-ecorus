@@ -1,7 +1,7 @@
 <header>
 	<div class="header">
 		<div class="navigation">
-			<a [routerLink]="['/main']">
+			<a [routerLink]="['/']">
 				<img src='/assets/svg-icons/ecorus.svg' alt='логотип'/>
 			</a>
 			<nav>
@@ -12,18 +12,41 @@
 			</nav>
 		</div>
 
-		<div class="additional-information">
-			<button  class="city">
-				<img src='/assets/svg-icons/сity.svg' alt='иконка города'/>
-				<span>Казань</span>
-			</button>
-			<button class="sign-in" (click)='openLoginDialog()'>
-				<img src='/assets/svg-icons/signIn.svg' alt='иконка входа'/>
-				<span>Войти</span>
-			</button>
-			<button class="menu-burger-btn" (click)='openMenuBurgerDialog()'>
-				<img src='/assets/svg-icons/menu-burger.svg' alt='иконка меню-бургера'/>
-			</button>
-		</div>
+		<ng-container *ngIf='!authService.isAuthorized; else other'>
+			<div class="additional-information">
+				<button  class="city">
+					<img src='/assets/svg-icons/сity.svg' alt='иконка города'/>
+					<span>Казань</span>
+				</button>
+				<button class="sign-in" (click)='openLoginDialog()'>
+					<img src='/assets/svg-icons/signIn.svg' alt='иконка входа'/>
+					<span>Войти</span>
+				</button>
+				<button class="menu-burger-btn" (click)='openMenuBurgerDialog()'>
+					<img src='/assets/svg-icons/menu-burger.svg' alt='иконка меню-бургера'/>
+				</button>
+			</div>
+		</ng-container>
+		<ng-template #other>
+			<div class="additional-information">
+				<button  class="city">
+					<img src='/assets/svg-icons/сity.svg' alt='иконка города'/>
+					<span>Казань</span>
+				</button>
+				<button  class="balance-hd">
+					<img src='/assets/images/balance.png' alt='иконка баланса'/>
+					<p>1000</p>
+				</button>
+				<button  class="username-hd" (click)='openProfile()'>
+					<img src='/assets/images/profile-menu-burger.png' alt='иконка профиля'/>
+					<p>{{(user$ | async)?.firstname}}</p>
+				</button>
+				<button class="menu-burger-btn" (click)='openMenuBurgerDialog()'>
+					<img src='/assets/svg-icons/menu-burger.svg' alt='иконка меню-бургера'/>
+				</button>
+			</div>
+		</ng-template>
 	</div>
 </header>
+
+

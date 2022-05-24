@@ -8,7 +8,6 @@
 
 	<div class="block-of-filter">
 		<h5>Тип товара</h5>
-		<app-checkboxes title='Выбрать все'></app-checkboxes>
 		<div *ngFor="let i of allTypes">
 			<app-checkboxes title="{{i.name}}"></app-checkboxes>
 		</div>
@@ -16,7 +15,6 @@
 
 	<div class="block-of-filter">
 		<h5>Бренд</h5>
-		<app-checkboxes title='Выбрать все'></app-checkboxes>
 		<div *ngFor="let i of allBrands">
 			<app-checkboxes title="{{i.name}}"></app-checkboxes>
 		</div>
@@ -25,7 +23,7 @@
 
 <div class='reset-filters'>
 	<app-button-medium type='button' title='Сбросить фильтры' background='rgba(62, 80, 114, 0.08)'
-	                   color='rgba(0, 11, 38, 0.8)'>
+	                   color='rgba(0, 11, 38, 0.8)' (click)='resetFilter()'>
 	</app-button-medium>
 </div>
 

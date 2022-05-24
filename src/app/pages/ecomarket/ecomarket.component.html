@@ -4,7 +4,7 @@
 			<h1>ЭкоМаркет</h1>
 			<div class='mobile-filters'>
 				<app-button-medium type='button' title='Фильтры' background='rgba(62, 80, 114, 0.08)'
-				                   color='rgba(0, 11, 38, 0.8)' (click)='openBottomSheetFilters()'>
+				                   color='rgba(0, 11, 38, 0.8)' (click)="openTemplateSheetMenu()">
 				</app-button-medium>
 			</div>
 			<div class="button-filters">
@@ -16,18 +16,27 @@
 				<app-filter-checkboxes></app-filter-checkboxes>
 			</div>
 			<div class="table-products">
-				<div *ngFor="let i of products">
-					<app-product-card title='{{i.title}}'
-					                  producer='{{i.producer}}'
-					                  img='{{i.img}}'
-					                  price='{{i.price}}'
+				<div *ngFor='let item of products | async'>
+					<app-product-card title='{{item.title}}'
+					                  producer='{{item.brand}}'
+					                  img='{{item.img}}'
+					                  price='{{item.price}}'
 					                  (click)='openQrCodeDialog()'>
 					</app-product-card>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
 	<app-footer></app-footer>
 </div>
+
+<ng-template let-bottomSheetRef="bottomSheetRef" #templateBottomSheet >
+	<app-filters-btn></app-filters-btn>
+	<app-filters-bottom-sheet></app-filters-bottom-sheet>
+	<div class='bottom_sheet_footer'>
+		<app-button-medium type='button' title='Применить' background='#07C88E'
+		                   color='white'></app-button-medium>
+		<app-button-medium type='button' title='Сбросить фильтры' background='rgba(62, 80, 114, 0.08)'
+		                   color='rgba(0, 11, 38, 0.8)' (click)="closeTemplateSheetMenu()"></app-button-medium>
+	</div>
+</ng-template>

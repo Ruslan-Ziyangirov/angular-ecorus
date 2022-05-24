@@ -1,22 +1,22 @@
-<div class="history-card-wrapper">
+<div class="history-card-wrapper" *ngFor='let item of history | async'>
 	<div class='history-card-container'>
 		<div class="history-information-wrapper">
 			<div class='block-information'>
 				<p>Адрес</p>
-				<h5>{{address}}</h5>
+				<h5>{{item.address}}</h5>
 			</div>
 			<div class='block-information'>
 				<p>Материал</p>
-				<h5>{{material}}</h5>
+				<h5>{{item.material}}</h5>
 			</div>
 			<div class='block-information'>
 				<p>Дата</p>
-				<h5>{{date}}</h5>
+				<h5>{{item.date}}</h5>
 			</div>
 		</div>
 		<div class="cost-wrapper">
 			<img src="/assets/images/balance.png" alt='balance'/>
-			<h4>{{cost}}</h4>
+			<h4>{{item.price}}</h4>
 		</div>
 	</div>
 </div>

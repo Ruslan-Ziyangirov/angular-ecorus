@@ -1,23 +1,23 @@
 <div class="menu-burger-wrapper">
 	<div class="menu-burger">
-		<div class="profile-menu-burger">
+		<button class="profile-menu-burger" (click)='openProfile()' [appDialogClose]>
 			<img src='/assets/images/profile-menu-burger.png' alt="профиль"/>
 			<div class="information-profile-burger">
 				<p class="name-profile-burger">
-					Алексей Петрович
+					{{(user$ | async)?.firstname}}
 				</p>
 				<div class="balance-burger">
 					<img src='/assets/images/balance.png' alt='иконка баланса'/>
 					<p>1000</p>
 				</div>
 			</div>
-		</div>
+		</button>
 
 		<nav class="navigation-burger">
-			<a [routerLink]="['/']" class="main">Главная</a>
-			<a [routerLink]="['/collectionpoints']">Пункты сбора</a>
-			<a [routerLink]="['/ecomarket']">ЭкоМаркет</a>
-			<a [routerLink]="['/']">О сервисе</a>
+			<a [routerLink]="['/']" class="main" [appDialogClose]>Главная</a>
+			<a [routerLink]="['/collectionpoints']" [appDialogClose]>Пункты сбора</a>
+			<a [routerLink]="['/ecomarket']" [appDialogClose]>ЭкоМаркет</a>
+			<a [routerLink]="['/']" [appDialogClose]>О сервисе</a>
 		</nav>
 
 		<button class="city-burger">

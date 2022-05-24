@@ -1,11 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
-import { DataItems } from '../../mocks/products-mock';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, TemplateRef, ViewChild } from '@angular/core';
 import { DialogService } from '@services/dialog.service';
-import { PartnersLoginFormComponent } from '@components/forms/partners-login-form/partners-login-form.component';
 import { QrCodeComponent } from '@components/modals/qr-code/qr-code.component';
-import { FiltersBottomSheetComponent } from '@components/bottom-sheets/filters-bottom-sheet/filters-bottom-sheet.component';
 import { BottomSheetService } from '@services/bottom-sheet.service';
+import { ProductsService } from '@services/product.service';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-ecomarket',
@@ -13,27 +11,30 @@ import { BottomSheetService } from '@services/bottom-sheet.service';
   styleUrls: ['./ecomarket.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EcomarketComponent {
-
+export class EcomarketComponent  {
+	@ViewChild('templateBottomSheet') TemplateBottomSheet?: TemplateRef<any>;
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
-	@Input() products: Array<any>;
+	products = this.productsService.products$;
 
 	constructor(
 		public dialog: DialogService,
-		private bottomSheetService: BottomSheetService
+		private bottomSheetService: BottomSheetService,
+		private productsService: ProductsService,
+		private bottomSheet: MatBottomSheet
 	) {
+	}
 
-		this.products = DataItems
+	openTemplateSheetMenu() {
+		// @ts-ignore
+		this.bottomSheet.open(this.TemplateBottomSheet);
+	}
 
+	closeTemplateSheetMenu() {
+		this.bottomSheet.dismiss();
 	}
 
 	openQrCodeDialog() {
 		this.dialog.openDialog(QrCodeComponent,{title: "QR-код на покупку создан"})
 	}
-
-	openBottomSheetFilters() {
-		this.bottomSheetService.openDialog(FiltersBottomSheetComponent)
-	}
-
 
 }
