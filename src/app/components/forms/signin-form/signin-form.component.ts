@@ -6,6 +6,8 @@ import { SignupFormComponent } from '@components/forms/signup-form/signup-form.c
 import { SigninWithSmsFormComponent } from '@components/forms/signin-with-sms-form/signin-with-sms-form.component';
 import { ToastService } from '@services/toast.service';
 import { AuthorizationService } from '@services/authorization.service';
+import { Router } from '@angular/router';
+import { DialogRef } from '@angular/cdk-experimental/dialog';
 
 @Component({
   selector: 'app-login-form',
@@ -21,7 +23,9 @@ export class SigninFormComponent {
 		public dialog: DialogService,
 		private formBuilder: FormBuilder,
 		private authService: AuthorizationService,
-		public toasterService: ToastService
+		public toasterService: ToastService,
+		private route: Router,
+		private dialogRef: DialogRef<SigninFormComponent>,
 
 	) {
 		this.formGroup = this.formBuilder.group({
@@ -59,17 +63,17 @@ export class SigninFormComponent {
 		this.toasterService.success(message)
 	}
 
+
 	login() {
 		const login = this.formGroup.value.login;
 		const password = this.formGroup.value.password;
 		return () => {
 			this.authService.authorization({login, password}).subscribe(res => {
 				this.authService.token = res.token;
-				console.log(this.authService.token);
-				console.log(res);
 				this.toaster("У вас все получилось!");
+				this.dialogRef.close();
+				this.route.navigate(['/profile']);
 			}, err => {
-				console.log(err);
 				this.toaster("Нашему серверу что-то плоховато...");
 
 			})

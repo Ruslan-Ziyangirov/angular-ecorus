@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AuthorizationService } from '@services/authorization.service';
+import { HistoryService } from '@services/history.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +10,16 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+	user: any;
 
-  ngOnInit(): void {
-  }
+	constructor(private historyService: HistoryService,private auth: AuthorizationService) { }
 
+	history$ = this.historyService.history$
+
+	ngOnInit(): void {
+		this.auth.getProfile().subscribe(res => {
+			this.user = res;
+			console.log(res);
+		});
+	}
 }

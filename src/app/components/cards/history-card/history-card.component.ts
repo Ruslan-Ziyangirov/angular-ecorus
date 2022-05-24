@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { ProfileComponent } from '@pages/profile/profile.component';
 
 @Component({
   selector: 'app-history-card',
@@ -6,21 +7,11 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
   styleUrls: ['./history-card.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HistoryCardComponent implements OnInit {
+export class HistoryCardComponent {
 
-	@Input() address: string;
-	@Input() material: string;
-	@Input() date?: string;
-	@Input() cost?: number;
+	  constructor(private profile: ProfileComponent) {
+	  }
 
-  constructor() {
-	  this.address ="Казань, Кремлёвская, 88";
-	  this.material ="Пластик: 1 кг";
-	  this.date = "25.09.2021";
-	  this.cost= 1000;
-  }
-
-  ngOnInit(): void {
-  }
+	@Input() history = this.profile.history$;
 
 }

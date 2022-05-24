@@ -67,6 +67,7 @@ export class SignupFormComponent{
 		return () => {
 			this.authService.registration(this.formGroup.value).subscribe(res => {
 				console.log(res);
+				this.authService.token = res.token;
 				this.dialog.openDialog(SigninFormComponent, {title:"Вход"});
 				this.toaster("Вы внесены в нашу базу данных!");
 			}, err => {
