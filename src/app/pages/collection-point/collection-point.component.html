@@ -1,0 +1,25 @@
+<div class='collection-point-wrapper'>
+	<div class='collection-point-content'>
+		<div class='menu-on-map-wrapper'>
+			<app-large-input></app-large-input>
+			<app-drop-down-list title='Выбрано 3 магазина' [array]='["H&M","P&B","H&M","Adidas","Nike"]'></app-drop-down-list>
+			<app-drop-down-list title='Материалы' [array]='["Дерево","Переработанный пластик","Бумага"]'></app-drop-down-list>
+		</div>
+	</div>
+
+	<div class="cards-wrapper">
+		<div class="cards-on-map">
+			<!--у меня случился инфаркт, эту функцию я так и не реализовал-->
+				<div *ngFor='let item of cards$ | async'>
+					<a [routerLink]="['/collectionPoint', item.id]">
+						<app-collection-point-card img="{{item.image}}" address='{{item.address}}' description='{{item.description}}'>
+						</app-collection-point-card>
+					</a>
+				</div>
+		</div>
+	</div>
+
+	<div class="map_content">
+		<div id="map"></div>
+	</div>
+</div>
