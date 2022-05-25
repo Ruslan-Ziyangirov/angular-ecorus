@@ -43,6 +43,12 @@ import { ProfileCardComponent } from './components/cards/profile-card/profile-ca
 import { PromoCardComponent } from './components/cards/promo-card/promo-card.component';
 import { HistoryCardComponent } from './components/cards/history-card/history-card.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { CollectionPointComponent } from './pages/collection-point/collection-point.component';
+import { LargeInputComponent } from './components/ui/inputs/large-input/large-input.component';
+import { DropDownListComponent } from './components/ui/drop-down-list/drop-down-list.component';
+import { CollectionPointCardComponent } from './components/cards/collection-point-card/collection-point-card.component';
+import { CollectionPointFullCardComponent } from './components/cards/collection-point-full-card/collection-point-full-card.component';
 
 
 @NgModule({
@@ -78,23 +84,29 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     ProfileCardComponent,
     PromoCardComponent,
     HistoryCardComponent,
+    CollectionPointComponent,
+    LargeInputComponent,
+    DropDownListComponent,
+    CollectionPointCardComponent,
+    CollectionPointFullCardComponent,
 	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		SwiperModule,
-		ReactiveFormsModule,
-		PortalModule,
-		DialogModule,
-		BrowserAnimationsModule,
-		MatBottomSheetModule,
-		HttpClientModule,
-		ToastrModule.forRoot({
-			timeOut: 2500,
-			positionClass: 'toast-top-right',
-			preventDuplicates: true,
-		}),
-	],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SwiperModule,
+        ReactiveFormsModule,
+        PortalModule,
+        DialogModule,
+        BrowserAnimationsModule,
+        MatBottomSheetModule,
+        HttpClientModule,
+        ToastrModule.forRoot({
+            timeOut: 2500,
+            positionClass: 'toast-top-right',
+            preventDuplicates: true,
+        }),
+        LeafletModule,
+    ],
 	providers: [{
 		provide: HTTP_INTERCEPTORS,
 		useClass: UrlInterceptorService,
