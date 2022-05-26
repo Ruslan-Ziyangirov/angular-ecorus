@@ -2,12 +2,12 @@ export interface CollectionCard  {
 	id?: number,
 	image: any,
 	address: string,
-	fullAddress?: string
-	phone?: string,
+	fullAddress: string
+	phone: string,
 	description: string,
-	timetable?: string[],
-	shop?: string,
-	items?: string[]
+	timetable: string[],
+	shop: string,
+	items: string[]
 }
 
 export const CollectionPointCardsMock: Array<CollectionCard > = [

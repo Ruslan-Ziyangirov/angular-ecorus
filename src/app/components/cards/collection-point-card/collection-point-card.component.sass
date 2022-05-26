@@ -1,3 +1,5 @@
+@import "../../../styles/mixins.sass"
+
 .recycling-place-card-wrapper
 	background: #FFFFFF
 	border: 1px solid rgba(62, 80, 114, 0.12)
@@ -35,3 +37,49 @@
 				color: rgba(0, 11, 38, 0.48)
 				padding: 0px
 				margin: 0px
+
+@include screenMax850
+
+	.recycling-place-card-wrapper
+
+		.image-information-wrapper
+			display: flex
+			padding: 14px
+
+			img
+				width: 100px
+				height: 78px
+				border-radius: 8px
+
+			.recycling-place-information
+				margin-left: 16px
+				text-align: left
+				max-width: 212px
+				width: 100%
+
+				h3
+					font-weight: 600
+					font-size: 14px
+					line-height: 18px
+					margin: 0px 0px 4px
+
+				p
+					letter-spacing: -0.15px
+					font-weight: 400
+					font-size: 14px
+					line-height: 18px
+					color: rgba(0, 11, 38, 0.48)
+					padding: 0px
+					margin: 0px
+
+
+@include screenMax730
+
+
+
+@include screenMax500
+
+
+
+@include screenMax375
+
