@@ -1,9 +1,11 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Input, TemplateRef, ViewChild } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
 import * as L from 'leaflet';
 import { environment } from '../../../environments/environment';
 import { CollectionCardPointService } from '@services/collection-point-card.service';
 import { HistoryService } from '@services/history.service';
+import { BottomSheetService } from '@services/bottom-sheet.service';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-collection-point',
@@ -12,12 +14,31 @@ import { HistoryService } from '@services/history.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CollectionPointComponent implements AfterViewInit  {
+	@ViewChild('templateBottomSheet') TemplateBottomSheet?: TemplateRef<any>;
+	@ViewChild('collectionPointBottomSheet') collectionPointBottomSheet?: TemplateRef<any>;
+
 	map: any;
-	constructor(private collectionPointCards: CollectionCardPointService) {
+	constructor(private collectionPointCards: CollectionCardPointService,
+				private bottomSheetService: BottomSheetService,
+				private bottomSheet: MatBottomSheet) {
 		console.log(collectionPointCards)
 	}
 
 	cards$ = this.collectionPointCards.cards$
+
+	openCollectionBottomSheet(){
+		// @ts-ignore
+		this.bottomSheet.open(this.collectionPointBottomSheet);
+	}
+
+	openTemplateSheetMenu() {
+		// @ts-ignore
+		this.bottomSheet.open(this.TemplateBottomSheet);
+	}
+
+	closeTemplateSheetMenu() {
+		this.bottomSheet.dismiss();
+	}
 
 
 	public ngAfterViewInit(): void {

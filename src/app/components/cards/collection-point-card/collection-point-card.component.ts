@@ -11,6 +11,7 @@ export class CollectionPointCardComponent implements OnInit {
 	@Input() img: string;
 	@Input() address: string;
 	@Input() description: string;
+	@Input() id: any;
 
 
 

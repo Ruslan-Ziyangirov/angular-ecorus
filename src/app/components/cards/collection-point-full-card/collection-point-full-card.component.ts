@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { CollectionCard } from '../../../mocks/collectionPoint-mock';
+import { Router } from '@angular/router';
+import { CollectionCardPointService } from '@services/collection-point-card.service';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { CollectionCard } from '../../../mocks/collectionPoint-mock';
 })
 export class CollectionPointFullCardComponent implements OnInit {
 
-	@Input() id?: number;
+	@Input() id: any;
 	@Input() image: any;
 	@Input() address: string;
 	@Input() fullAddress?: string;
@@ -20,13 +22,24 @@ export class CollectionPointFullCardComponent implements OnInit {
 	@Input() shop?: string;
 	@Input() items?: Array<string>;
 
-  constructor() {
+  constructor(private route: Router,
+			  private collectionPointCards: CollectionCardPointService) {
 	  this.address="";
 	  this.description="";
 	  this.items=[];
   }
 
+  cards$ = this.collectionPointCards.cards$
+
   ngOnInit(): void {
   }
+
+  	getId(){
+	  console.log(this.id)
+	}
+
+	back(){
+		this.route.navigate(['/collectionPoint'])
+	}
 
 }

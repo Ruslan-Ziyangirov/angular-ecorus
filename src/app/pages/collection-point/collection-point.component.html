@@ -1,21 +1,28 @@
 <div class='collection-point-wrapper'>
 	<div class='collection-point-content'>
 		<div class='menu-on-map-wrapper'>
-			<app-large-input></app-large-input>
-			<app-drop-down-list title='Выбрано 3 магазина' [array]='["H&M","P&B","H&M","Adidas","Nike"]'></app-drop-down-list>
-			<app-drop-down-list title='Материалы' [array]='["Дерево","Переработанный пластик","Бумага"]'></app-drop-down-list>
+			<app-large-input (click)='openCollectionBottomSheet()'></app-large-input>
+			<div class='select-wrapper'>
+				<app-drop-down-list title='Выбрано 3 магазина' [array]='["H&M","P&B","H&M","Adidas","Nike"]'></app-drop-down-list>
+			</div>
+			<div class='select-wrapper'>
+				<app-drop-down-list title='Материалы' [array]='["Дерево","Переработанный пластик","Бумага"]'></app-drop-down-list>
+			</div>
+			<button class='filter-btn' (click)='openTemplateSheetMenu()'>
+				<img src='/assets/svg-icons/filter-btn.svg'>
+			</button>
 		</div>
 	</div>
 
 	<div class="cards-wrapper">
 		<div class="cards-on-map">
-			<!--у меня случился инфаркт, эту функцию я так и не реализовал-->
 				<div *ngFor='let item of cards$ | async'>
 					<a [routerLink]="['/collectionPoint', item.id]">
-						<app-collection-point-card img="{{item.image}}" address='{{item.address}}' description='{{item.description}}'>
+						<app-collection-point-card img="{{item.image}}" id='{{item.id}}' address='{{item.address}}' description='{{item.description}}'>
 						</app-collection-point-card>
 					</a>
 				</div>
+			<router-outlet></router-outlet>
 		</div>
 	</div>
 
@@ -23,3 +30,17 @@
 		<div id="map"></div>
 	</div>
 </div>
+
+<ng-template let-bottomSheetRef="bottomSheetRef" #templateBottomSheet >
+	<app-filters-bottom-sheet></app-filters-bottom-sheet>
+	<div class='bottom_sheet_footer'>
+		<app-button-medium type='button' title='Применить' background='#07C88E'
+		                   color='white'></app-button-medium>
+		<app-button-medium type='button' title='Сбросить фильтры' background='rgba(62, 80, 114, 0.08)'
+		                   color='rgba(0, 11, 38, 0.8)' (click)="closeTemplateSheetMenu()"></app-button-medium>
+	</div>
+</ng-template>
+
+<ng-template let-bottomSheetRef="bottomSheetRef" #collectionPointBottomSheet >
+	<app-collection-point-list-bottom-sheet></app-collection-point-list-bottom-sheet>
+</ng-template>

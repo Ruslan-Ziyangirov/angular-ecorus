@@ -1,3 +1,5 @@
+@import "../../styles/mixins.sass"
+
 .collection-point-wrapper
 	position: relative
 
@@ -15,6 +17,9 @@
 			display: flex
 			align-items: center
 			justify-content: space-between
+
+			.filter-btn
+				display: none
 
 	.cards-wrapper
 		max-width: 1200px
@@ -44,3 +49,114 @@
 
 .map_content
 	width: 100%
+
+@include screenMax1250
+
+	.collection-point-wrapper
+
+		.collection-point-content
+			max-width: 1100px
+			width: 100%
+
+			.menu-on-map-wrapper
+				max-width: 1100px
+				width: 100%
+
+		.cards-wrapper
+			max-width: 1100px
+			width: 100%
+
+
+
+@include screenMax1100
+	.collection-point-wrapper
+
+		.collection-point-content
+			max-width: 850px
+			width: 100%
+
+			.menu-on-map-wrapper
+				max-width: 850px
+				width: 100%
+
+		.cards-wrapper
+			max-width: 850px
+			width: 100%
+
+
+@include screenMax850
+	.collection-point-wrapper
+
+		.collection-point-content
+			max-width: 750px
+			width: 100%
+
+			.menu-on-map-wrapper
+				max-width: 750px
+				width: 100%
+
+		.cards-wrapper
+			max-width: 750px
+			width: 100%
+
+@include screenMax730
+	.collection-point-wrapper
+
+		.collection-point-content
+			max-width: 550px
+			width: 100%
+
+			.menu-on-map-wrapper
+				max-width: 550px
+				width: 100%
+
+		.cards-wrapper
+			max-width: 550px
+			width: 100%
+
+@include screenMax500
+	.collection-point-wrapper
+
+		.collection-point-content
+			max-width: 400px
+			width: 100%
+
+			.menu-on-map-wrapper
+				margin-top: 16px
+				max-width: 400px
+				width: 100%
+
+				.select-wrapper
+					display: none
+
+				.filter-btn
+					background: white
+					border-radius: 8px
+					width: 48px
+					height: 48px
+					box-shadow: 0px 2px 8px rgba(21, 45, 103, 0.12)
+					display: block
+					border: 0px
+					padding: 0px
+
+					img
+						display: block
+						margin: 0 auto
+
+
+		.cards-wrapper
+			display: none
+
+
+@include screenMax375
+
+	.collection-point-wrapper
+
+		.collection-point-content
+			max-width: 343px
+			width: 100%
+
+			.menu-on-map-wrapper
+				margin-top: 16px
+				max-width: 343px
+				width: 100%

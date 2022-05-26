@@ -1,3 +1,5 @@
+@import "../../../../styles/mixins"
+
 .input-wrapper
 	width: 605px
 	background: #FFF
@@ -28,6 +30,73 @@
 			color: rgba(0, 11, 38, 0.48)
 			font-size: 14px
 
+@include screenMax1250
+
+
+@include screenMax1100
+
+	.input-wrapper
+		width: 384px
+
+		.input-content
+
+			input
+				margin-left: 8px
+				max-width: 316px
+				width: 100%
+				font-size: 14px
+				outline: none
+
+
+@include screenMax850
+
+	.input-wrapper
+		width: 356px
+
+		.input-content
+
+			input
+				margin-left: 8px
+				max-width: 304px
+				width: 100%
+				font-size: 14px
+				outline: none
+
+
+@include screenMax730
+
+	.input-wrapper
+		width: 276px
+
+		.input-content
+
+			input
+				max-width: 224px
+				width: 100%
+
+
+
+
+@include screenMax500
+
+	.input-wrapper
+		width: 330px
+
+		.input-content
+
+			input
+				max-width: 278px
+				width: 100%
+
+@include screenMax375
+	.input-wrapper
+		width: 270px
+
+		.input-content
+
+			input
+				max-width: 218px
+				width: 100%
 
 
 

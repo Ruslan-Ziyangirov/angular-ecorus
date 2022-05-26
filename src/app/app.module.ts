@@ -49,6 +49,7 @@ import { LargeInputComponent } from './components/ui/inputs/large-input/large-in
 import { DropDownListComponent } from './components/ui/drop-down-list/drop-down-list.component';
 import { CollectionPointCardComponent } from './components/cards/collection-point-card/collection-point-card.component';
 import { CollectionPointFullCardComponent } from './components/cards/collection-point-full-card/collection-point-full-card.component';
+import { CollectionPointListBottomSheetComponent } from './components/bottom-sheets/collection-point-list-bottom-sheet/collection-point-list-bottom-sheet.component';
 
 
 @NgModule({
@@ -89,6 +90,7 @@ import { CollectionPointFullCardComponent } from './components/cards/collection-
     DropDownListComponent,
     CollectionPointCardComponent,
     CollectionPointFullCardComponent,
+    CollectionPointListBottomSheetComponent
 	],
     imports: [
         BrowserModule,
