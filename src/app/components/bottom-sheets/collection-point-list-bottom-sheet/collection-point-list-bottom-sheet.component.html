@@ -2,7 +2,7 @@
 <div class='collection-point-bottom-sheet'>
 	<div *ngFor='let item of cards$ | async'>
 		<a [routerLink]="['/collectionPoint', item.id]">
-			<app-collection-point-card img="{{item.image}}" address='{{item.address}}' description='{{item.description}}'>
+			<app-collection-point-card img="{{item.img}}" address='{{item.address}}' description='{{item.description}}'>
 			</app-collection-point-card>
 		</a>
 	</div>

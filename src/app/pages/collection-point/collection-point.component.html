@@ -17,8 +17,8 @@
 	<div class="cards-wrapper">
 		<div class="cards-on-map">
 				<div *ngFor='let item of cards$ | async'>
-					<a [routerLink]="['/collectionPoint', item.id]">
-						<app-collection-point-card img="{{item.image}}" id='{{item.id}}' address='{{item.address}}' description='{{item.description}}'>
+					<a [routerLink]="[item.id]">
+						<app-collection-point-card img="{{item.img}}" id='{{item.id}}' address='{{item.address}}' description='{{item.description}}'>
 						</app-collection-point-card>
 					</a>
 				</div>
