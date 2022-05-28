@@ -52,6 +52,9 @@ import { CollectionPointFullCardComponent } from './components/cards/collection-
 import { CollectionPointListBottomSheetComponent } from './components/bottom-sheets/collection-point-list-bottom-sheet/collection-point-list-bottom-sheet.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { EcomarketSkeletonComponent } from './components/animation/skeleton/ecomarket-skeleton/ecomarket-skeleton.component';
+import { HomeSkeletonComponent } from './components/animation/skeleton/home-skeleton/home-skeleton.component';
+import { CollectionPointSkeletonComponent } from './components/animation/skeleton/collection-point-skeleton/collection-point-skeleton.component';
+import { ProfileSkeletonComponent } from './components/animation/skeleton/profile-skeleton/profile-skeleton.component';
 
 
 @NgModule({
@@ -93,7 +96,10 @@ import { EcomarketSkeletonComponent } from './components/animation/skeleton/ecom
     CollectionPointCardComponent,
     CollectionPointFullCardComponent,
     CollectionPointListBottomSheetComponent,
-    EcomarketSkeletonComponent
+    EcomarketSkeletonComponent,
+    HomeSkeletonComponent,
+    CollectionPointSkeletonComponent,
+    ProfileSkeletonComponent
 	],
     imports: [
         BrowserModule,

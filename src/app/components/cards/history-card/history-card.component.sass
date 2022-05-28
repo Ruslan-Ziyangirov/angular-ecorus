@@ -1,11 +1,12 @@
-@import "../../../styles/mixins.sass"
+@import "src/app/styles/mixins.sass"
+@import "src/app/styles/colors.sass"
 
 .history-card-wrapper
 	margin-top: 24px
 	max-width: 704px
 	padding: 32px
 	width: 100%
-	border: 1px solid #E0E0E0
+	border: 1px solid $c-light-grey
 	border-radius: 20px
 	margin-bottom: 16px
 
@@ -14,8 +15,6 @@
 		display: flex
 		justify-content: space-between
 		align-items: flex-start
-
-
 
 		.history-information-wrapper
 			display: flex
@@ -30,10 +29,10 @@
 					font-weight: 500
 					font-size: 14px
 					margin: 0 0 4px
-					color: rgba(0, 11, 38, 0.4)
+					color: $c-text-64
 
 				h5
-					color: rgba(0, 11, 38, 0.88)
+					color: $c-text-88
 					font-weight: 400
 					font-size: 16px
 					margin: 0px
@@ -46,7 +45,7 @@
 			align-items: center
 
 			h4
-				color: #000000
+				color: $c-text-100
 				font-weight: 600
 				font-size: 14px
 				margin-left: 8px

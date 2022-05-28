@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogService } from '@services/dialog.service';
 import { SignupFormComponent } from '@components/forms/signup-form/signup-form.component';
+import { SigninWithSmsFormComponent } from '@components/forms/signin-with-sms-form/signin-with-sms-form.component';
 
 @Component({
   selector: 'app-partners-login-form',
@@ -41,6 +42,11 @@ export class PartnersLoginFormComponent{
 	getControl(name: string) {
 		return this.formGroup.get(name)!;
 	}
+
+	openLoginWithSMSDialog() {
+		this.dialog.openDialog(SigninWithSmsFormComponent,{title: "Вход или регистрация"})
+	}
+
 
 	openSignUpDialog() {
 		this.dialog.openDialog(SignupFormComponent,{title: "Регистрация"})

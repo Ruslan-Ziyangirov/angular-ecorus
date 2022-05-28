@@ -1,7 +1,8 @@
-@import "../../styles/mixins.sass"
+@import "src/app/styles/mixins.sass"
+@import "src/app/styles/colors.sass"
 
 footer
-	border-top: 1px solid #E0E0E0
+	border-top: 1px solid $c-light-grey
 
 .footer-wrapper
 	max-width: 1200px
@@ -17,9 +18,8 @@ footer
 
 	p
 		padding-bottom: 0px
-		margin: 0px
-		margin-left: 10px
-		color: rgba(0, 11, 38, 0.64)
+		margin: 0px 0px 0px 10px
+		color: $c-text-64
 
 
 .call
@@ -29,9 +29,8 @@ footer
 
 	p
 		padding-bottom: 0px
-		margin: 0px
-		margin-left: 10px
-		color: rgba(0, 11, 38, 0.64)
+		margin: 0px 0px 0px 10px
+		color: $c-text-64
 
 @include screenMax1250
 	.footer-wrapper
@@ -62,8 +61,8 @@ footer
 @include screenMax375
 
 	footer
-		border-top: 1px solid #E0E0E0
-		margin-top: 125px
+		border-top: 1px solid $c-light-grey
+		margin-top: 150px
 
 	.footer-wrapper
 		width: 343px

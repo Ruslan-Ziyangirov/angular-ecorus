@@ -1,10 +1,4 @@
-$font-stack: Inter, sans-serif
-$primary-color: #00040a
-$secondary-color: rgba(53, 62, 91, 0.64)
-$green-color: #07C88E
-
-h1, a, button, p, input, span
-	font-family: $font-stack
+@import "src/app/styles/colors.sass"
 
 .checkbox-wrapper
 	margin-bottom: 12px
@@ -21,7 +15,7 @@ h1, a, button, p, input, span
 	user-select: none
 	font-size: 14px
 	font-weight: 400
-	color: rgba(0, 11, 38, 0.72)
+	color: $c-text-88
 
 
 .custom-checkbox>span::before
@@ -37,16 +31,16 @@ h1, a, button, p, input, span
 	background-repeat: no-repeat
 	background-position: center center
 	background-size: 50% 50%
-	color: black
+	color: $c-text-100
 
 .custom-checkbox>input:not(:disabled):active+span::before
-	background-color: $green-color
-	border-color: $green-color
+	background-color: $c-green
+	border-color: $c-green
 	font-weight: 600
 	color: black
 
 .custom-checkbox>input:checked+span::before
-	background-color: $green-color
-	border-color: $green-color
+	background-color: $c-green
+	border-color: $c-green
 	background-image: url(../../../../assets/svg-icons/check.svg)
-	color: black
+	color: $c-text-100

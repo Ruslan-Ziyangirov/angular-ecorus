@@ -1,4 +1,4 @@
-<form class='form_modal'
+<form class='form-modal'
 	[formGroup]='formGroup'>
 	<input
 		formControlName='email'
@@ -35,8 +35,8 @@
 
 	<app-button-large title='Войти' background='#07C88E' color='white' type='submit'></app-button-large>
 
-	<div class='modal__underLinks'>
-		<button>
+	<div class='modal-underLinks'>
+		<button (click)='openLoginWithSMSDialog()'>
 			Войти с помощью смс
 		</button>
 		<button (click)='openSignUpDialog()'>
