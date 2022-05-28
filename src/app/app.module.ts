@@ -50,6 +50,8 @@ import { DropDownListComponent } from './components/ui/drop-down-list/drop-down-
 import { CollectionPointCardComponent } from './components/cards/collection-point-card/collection-point-card.component';
 import { CollectionPointFullCardComponent } from './components/cards/collection-point-full-card/collection-point-full-card.component';
 import { CollectionPointListBottomSheetComponent } from './components/bottom-sheets/collection-point-list-bottom-sheet/collection-point-list-bottom-sheet.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { EcomarketSkeletonComponent } from './components/animation/skeleton/ecomarket-skeleton/ecomarket-skeleton.component';
 
 
 @NgModule({
@@ -90,7 +92,8 @@ import { CollectionPointListBottomSheetComponent } from './components/bottom-she
     DropDownListComponent,
     CollectionPointCardComponent,
     CollectionPointFullCardComponent,
-    CollectionPointListBottomSheetComponent
+    CollectionPointListBottomSheetComponent,
+    EcomarketSkeletonComponent
 	],
     imports: [
         BrowserModule,
@@ -101,6 +104,7 @@ import { CollectionPointListBottomSheetComponent } from './components/bottom-she
         DialogModule,
         BrowserAnimationsModule,
         MatBottomSheetModule,
+		NgxSkeletonLoaderModule,
         HttpClientModule,
         ToastrModule.forRoot({
             timeOut: 2500,
@@ -129,4 +133,5 @@ import { CollectionPointListBottomSheetComponent } from './components/bottom-she
 	bootstrap: [AppComponent]
 })
 export class AppModule {
+
 }

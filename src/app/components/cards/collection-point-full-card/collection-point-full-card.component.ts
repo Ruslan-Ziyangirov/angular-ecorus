@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { CollectionCard } from '../../../mocks/collectionPoint-mock';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CollectionCardPointService } from '@services/collection-point-card.service';
+import { CollectionPoint } from '@models/collection-point';
 
 
 @Component({
@@ -12,31 +12,23 @@ import { CollectionCardPointService } from '@services/collection-point-card.serv
 })
 export class CollectionPointFullCardComponent implements OnInit {
 
-	@Input() id: any;
-	@Input() image: any;
-	@Input() address: string;
-	@Input() fullAddress?: string;
-	@Input() phone?: string;
-	@Input() description: string;
-	@Input() timetable?: string[];
-	@Input() shop?: string;
-	@Input() items?: Array<string>;
-
   constructor(private route: Router,
+			  private activateRoute: ActivatedRoute,
 			  private collectionPointCards: CollectionCardPointService) {
-	  this.address="";
-	  this.description="";
-	  this.items=[];
   }
 
+  collPoint: CollectionPoint | null = null;
+  id: number = this.activateRoute.snapshot.params['id'];
   cards$ = this.collectionPointCards.cards$
 
   ngOnInit(): void {
+	  this.cards$
+		  .getValue()
+		  .filter((collPoint: CollectionPoint) => (collPoint.id === +this.id))
+		  .map((point: CollectionPoint) => {
+			  this.collPoint = point
+		  })
   }
-
-  	getId(){
-	  console.log(this.id)
-	}
 
 	back(){
 		this.route.navigate(['/collectionPoint'])

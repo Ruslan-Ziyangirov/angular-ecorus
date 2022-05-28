@@ -6,6 +6,7 @@ import { CollectionCardPointService } from '@services/collection-point-card.serv
 import { HistoryService } from '@services/history.service';
 import { BottomSheetService } from '@services/bottom-sheet.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-collection-point',
@@ -18,13 +19,17 @@ export class CollectionPointComponent implements AfterViewInit  {
 	@ViewChild('collectionPointBottomSheet') collectionPointBottomSheet?: TemplateRef<any>;
 
 	map: any;
+
 	constructor(private collectionPointCards: CollectionCardPointService,
 				private bottomSheetService: BottomSheetService,
-				private bottomSheet: MatBottomSheet) {
+				private bottomSheet: MatBottomSheet,
+				public activateRoute: ActivatedRoute) {
 		console.log(collectionPointCards)
 	}
 
 	cards$ = this.collectionPointCards.cards$
+
+
 
 	openCollectionBottomSheet(){
 		// @ts-ignore

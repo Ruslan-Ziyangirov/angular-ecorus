@@ -1,36 +1,39 @@
-<div class="full-card-on-page">
+<div class="full-card-on-page" *ngIf='collPoint'>
 	<div class="full-recycling-card-wrapper">
 		<button  class="btn-back-full-card" (click)='back()'>
 			<img src='/assets/svg-icons/left-arrow-back.svg'>
-				Вернуться назад
+			Вернуться назад
 		</button>
 		<div class="full-information-recycling-card">
-			<img [src]='image' class="image-full-card"/>
+			<img [src]='collPoint.img' class="image-full-card"/>
 			<div class="full-card-information-wrapper">
 				<div class="address-and-phone">
 					<h5>
-						{{address}}
+						{{collPoint.address}}
 					</h5>
 
 					<p>
-						{{phone}}
+						{{collPoint.phone}}
 					</p>
 				</div>
 
 				<div class="timetable">
 					<p>
-						{{timetable}}
+						{{collPoint.timetable}}
 					</p>
 				</div>
 
-				<div class="shop-and-items">
+				<div class='shop-and-items'>
 					<p>
-						{{shop}}
+						{{collPoint.shop}}
 					</p>
-					<div *ngFor='let item of items'>
-						<button>
-							{{item}}
-						</button>
+
+					<div class='items'>
+						<div *ngFor='let item of collPoint.items'>
+							<button>
+								{{item}}
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
