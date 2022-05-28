@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, TemplateRef, ViewChild } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	EventEmitter,
+	Input,
+	OnInit,
+	Output,
+	TemplateRef,
+	ViewChild
+} from '@angular/core';
 import { DialogService } from '@services/dialog.service';
 import { QrCodeComponent } from '@components/modals/qr-code/qr-code.component';
 import { BottomSheetService } from '@services/bottom-sheet.service';
@@ -11,10 +20,12 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
   styleUrls: ['./ecomarket.component.sass'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EcomarketComponent  {
+export class EcomarketComponent implements OnInit{
 	@ViewChild('templateBottomSheet') TemplateBottomSheet?: TemplateRef<any>;
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 	products = this.productsService.products$;
+
+	loaded = true;
 
 	constructor(
 		public dialog: DialogService,
@@ -22,7 +33,15 @@ export class EcomarketComponent  {
 		private productsService: ProductsService,
 		private bottomSheet: MatBottomSheet
 	) {
+
 	}
+
+	ngOnInit(){
+		setTimeout(()=>{
+			this.loaded=false;
+		}, 2000)
+	}
+
 
 	openTemplateSheetMenu() {
 		// @ts-ignore
@@ -36,5 +55,7 @@ export class EcomarketComponent  {
 	openQrCodeDialog() {
 		this.dialog.openDialog(QrCodeComponent,{title: "QR-код на покупку создан"})
 	}
+
+
 
 }
