@@ -1,4 +1,12 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, Input, TemplateRef, ViewChild } from '@angular/core';
+import {
+	AfterViewInit,
+	ChangeDetectionStrategy,
+	ChangeDetectorRef,
+	Component,
+	Input,
+	TemplateRef,
+	ViewChild
+} from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
 import * as L from 'leaflet';
 import { environment } from '../../../environments/environment';
@@ -19,17 +27,24 @@ export class CollectionPointComponent implements AfterViewInit  {
 	@ViewChild('collectionPointBottomSheet') collectionPointBottomSheet?: TemplateRef<any>;
 
 	map: any;
+	loading: boolean = true;
 
 	constructor(private collectionPointCards: CollectionCardPointService,
 				private bottomSheetService: BottomSheetService,
 				private bottomSheet: MatBottomSheet,
-				public activateRoute: ActivatedRoute) {
+				public activateRoute: ActivatedRoute,
+				private cdr: ChangeDetectorRef) {
 		console.log(collectionPointCards)
 	}
 
 	cards$ = this.collectionPointCards.cards$
 
-
+	ngOnInit(){
+		setTimeout(() => {
+			this.loading = false;
+			this.cdr.markForCheck();
+		}, 3000);
+	}
 
 	openCollectionBottomSheet(){
 		// @ts-ignore

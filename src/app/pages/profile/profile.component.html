@@ -1,22 +1,28 @@
-<div class="profile-page-wrapper">
-	<h1>Личный кабинет</h1>
-	<div class="profile-information-wrapper">
-		<app-profile-card [name]=user.firstname
-		                  [telephone]=user.phone_number
-		                  [email]=user.email
-		                  image='/assets/images/profile-image.png'
-		></app-profile-card>
-		<div class="promocode-and-history-wrapper">
-			<div class="promocode-history-nav">
-				<a [routerLink]="['/profile/promocode']"
-				   class='switch-link'
-				   [routerLinkActive]="['switch-link-active']">Промокоды</a>
-				<a [routerLink]="['/profile/history']"
-				   class='switch-link'
-				   [routerLinkActive]="['switch-link-active']">История</a>
-			</div>
-			<router-outlet></router-outlet>
-		</div>
+<ng-container *ngIf='loading'>
+	<app-profile-skeleton></app-profile-skeleton>
+</ng-container>
 
-	</div>
+<ng-container *ngIf='!loading'>
+	<div class="profile-page-wrapper">
+		<h1>Личный кабинет</h1>
+		<div class="profile-information-wrapper">
+			<app-profile-card [name]=user.firstname
+			                  [telephone]=user.phone_number
+			                  [email]=user.email
+			                  image='/assets/images/profile-image.png'
+			></app-profile-card>
+			<div class="promocode-and-history-wrapper">
+				<div class="promocode-history-nav">
+					<a [routerLink]="['/profile/promocode']"
+					   class='switch-link'
+					   [routerLinkActive]="['switch-link-active']">Промокоды</a>
+					<a [routerLink]="['/profile/history']"
+					   class='switch-link'
+					   [routerLinkActive]="['switch-link-active']">История</a>
+				</div>
+				<router-outlet></router-outlet>
+			</div>
+		</div>
 </div>
+</ng-container>
+

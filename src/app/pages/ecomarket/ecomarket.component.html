@@ -1,34 +1,41 @@
-<div class="ecomarket-page">
-	<div class="body-for-ecomarket-page">
-		<div class="header-and-button-filter">
-			<h1>ЭкоМаркет</h1>
-			<div class='mobile-filters'>
-				<app-button-medium type='button' title='Фильтры' background='rgba(62, 80, 114, 0.08)'
-				                   color='rgba(0, 11, 38, 0.8)' (click)="openTemplateSheetMenu()">
-				</app-button-medium>
+<ng-container *ngIf='loading'>
+	<app-ecomarket-skeleton></app-ecomarket-skeleton>
+</ng-container>
+
+<ng-container *ngIf='!loading'>
+	<div class="ecomarket-page">
+		<div class="body-for-ecomarket-page">
+			<div class="header-and-button-filter">
+				<h1>ЭкоМаркет</h1>
+				<div class='mobile-filters'>
+					<app-button-medium type='button' title='Фильтры' background='rgba(62, 80, 114, 0.08)'
+					                   color='rgba(0, 11, 38, 0.8)' (click)="openTemplateSheetMenu()">
+					</app-button-medium>
+				</div>
+				<div class="button-filters">
+					<app-filters-btn></app-filters-btn>
+				</div>
 			</div>
-			<div class="button-filters">
-				<app-filters-btn></app-filters-btn>
-			</div>
-		</div>
-		<div class="filter-and-table">
-			<div class="filter-wrapper">
-				<app-filter-checkboxes></app-filter-checkboxes>
-			</div>
-			<div class="table-products">
-				<div *ngFor='let item of products | async'>
-					<app-product-card title='{{item.title}}'
-					                  producer='{{item.brand}}'
-					                  img='{{item.img}}'
-					                  price='{{item.price}}'
-					                  (click)='openQrCodeDialog()'>
-					</app-product-card>
+			<div class="filter-and-table">
+				<div class="filter-wrapper">
+					<app-filter-checkboxes></app-filter-checkboxes>
+				</div>
+				<div class="table-products">
+					<div *ngFor='let item of products | async'>
+						<app-product-card title='{{item.title}}'
+						                  producer='{{item.brand}}'
+						                  img='{{item.img}}'
+						                  price='{{item.price}}'
+						                  (click)='openQrCodeDialog()'>
+						</app-product-card>
+					</div>
 				</div>
 			</div>
 		</div>
+		<app-footer></app-footer>
 	</div>
-	<app-footer></app-footer>
-</div>
+</ng-container>
+
 
 <ng-template let-bottomSheetRef="bottomSheetRef" #templateBottomSheet >
 	<app-filters-btn></app-filters-btn>
