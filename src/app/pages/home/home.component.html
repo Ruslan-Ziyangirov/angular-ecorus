@@ -1,9 +1,16 @@
-<app-swiper></app-swiper>
-<div class="blocks">
-	<app-main-page-card title='Пункты сбора' text='Посмотри, где в твоем городе можно сдать вторсырье на переработку'
-	            image='/assets/svg-icons/map.svg' routerLink='/collectionPoint'></app-main-page-card>
-	<app-main-page-card title='ЭкоМаркет'
-	            text='Используй заработанные экокоины для покупки товаров из материалов '
-	            image='/assets/svg-icons/reduce.svg' routerLink='/ecomarket'></app-main-page-card>
-</div>
-<app-footer></app-footer>
+<ng-container *ngIf='loading'>
+	<app-home-skeleton></app-home-skeleton>
+</ng-container>
+
+<ng-container  *ngIf='!loading'>
+	<app-swiper></app-swiper>
+	<div class="blocks">
+		<app-main-page-card title='Пункты сбора' text='Посмотри, где в твоем городе можно сдать вторсырье на переработку'
+		                    image='/assets/svg-icons/map.svg' routerLink='/collectionPoint'></app-main-page-card>
+		<app-main-page-card title='ЭкоМаркет'
+		                    text='Используй заработанные экокоины для покупки товаров из материалов '
+		                    image='/assets/svg-icons/reduce.svg' routerLink='/ecomarket'></app-main-page-card>
+	</div>
+	<app-footer></app-footer>
+</ng-container>
+

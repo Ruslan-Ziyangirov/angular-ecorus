@@ -1,5 +1,5 @@
 import {
-	ChangeDetectionStrategy,
+	ChangeDetectionStrategy, ChangeDetectorRef,
 	Component,
 	EventEmitter,
 	Input,
@@ -25,21 +25,23 @@ export class EcomarketComponent implements OnInit{
 	@Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 	products = this.productsService.products$;
 
-	loaded = true;
+	loading: boolean = true;
 
 	constructor(
 		public dialog: DialogService,
 		private bottomSheetService: BottomSheetService,
 		private productsService: ProductsService,
-		private bottomSheet: MatBottomSheet
+		private bottomSheet: MatBottomSheet,
+		private cdr: ChangeDetectorRef
 	) {
 
 	}
 
 	ngOnInit(){
-		setTimeout(()=>{
-			this.loaded=false;
-		}, 2000)
+		setTimeout(() => {
+			this.loading = false;
+			this.cdr.markForCheck();
+		}, 3000);
 	}
 
 

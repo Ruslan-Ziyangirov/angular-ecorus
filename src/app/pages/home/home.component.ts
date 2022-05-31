@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +9,17 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+	loading: boolean = true;
 
-  }
+	constructor(private cdr: ChangeDetectorRef) {
+
+	}
 
     ngOnInit(): void {
+		setTimeout(() => {
+			this.loading = false;
+			this.cdr.markForCheck();
+		}, 3000);
     }
 
 }
