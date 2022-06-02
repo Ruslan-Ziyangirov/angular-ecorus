@@ -38,7 +38,8 @@
 				text-decoration: none
 				color: $c-text-100
 
-
+	.open-bottom-sheet-btn
+		display: none
 
 #map
 	height: 100vh
@@ -147,6 +148,22 @@
 
 		.cards-wrapper
 			display: none
+
+		.open-bottom-sheet-btn
+			display: block
+			position: fixed
+			width: 100%
+			bottom: 0
+			left: 0
+			border: 0px
+			padding: 16px 0px
+			text-align: center
+			background: white
+			border-radius: 12px 12px 0px 0px
+			font-size: 14px
+			line-height: 16px
+			color: black
+			z-index: 100
 
 
 @include screenMax375
