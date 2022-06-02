@@ -2,7 +2,7 @@
 	<div class='collection-point-wrapper'>
 		<div class='collection-point-content'>
 			<div class='menu-on-map-wrapper'>
-				<app-large-input (click)='openCollectionBottomSheet()'></app-large-input>
+				<app-large-input ></app-large-input>
 				<div class='select-wrapper'>
 					<app-drop-down-list title='Выбрано 3 магазина' [array]='["H&M","P&B","H&M","Adidas","Nike"]'></app-drop-down-list>
 				</div>
@@ -26,6 +26,14 @@
 				<router-outlet></router-outlet>
 			</div>
 		</div>
+
+		<button
+			type="button"
+			class="open-bottom-sheet-btn"
+			(click)='openCollectionBottomSheet()'
+		>
+			Показать 12 пунктов сбора
+		</button>
 
 		<div class="map_content">
 			<div id="map"></div>
